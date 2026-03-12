@@ -345,7 +345,12 @@ class OnboardingStartWidget extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // aqui iria para a HOME
+                 Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const TelaSplash(),
+                    ),
+                  );
                 },
                 child: const Text(
                   "Compre agora",
@@ -356,6 +361,77 @@ class OnboardingStartWidget extends StatelessWidget {
                 ),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+class TelaSplash extends StatefulWidget {
+  const TelaSplash({super.key});
+
+  @override
+  State<TelaSplash> createState() => _TelaSplashState();
+}
+
+class _TelaSplashState extends State<TelaSplash> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+   @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFFFDEE9),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            const Icon(
+              Icons.spa_outlined,
+              color: Color(0xFF871F78),
+              size: 100,
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              'Green Belt',
+              style: TextStyle(
+                fontSize: 70,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              'Building your dreams',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Colors.black,
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF871F78),
+                minimumSize: const Size(300, 55),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+              ),
+              child: const Text(
+                "Sign In",
+                style: TextStyle(fontSize: 18,
+                color: Colors.white),
+                
+              ),
+            ),
+
           ],
         ),
       ),
